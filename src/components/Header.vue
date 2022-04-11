@@ -1,6 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
   <Button
+    v-show="homePage"
     @toggleOnClick="toggleAddTask"
     :text="getTaskButtonText(taskFormShown)"
     :color="getTaskButtonColor(taskFormShown)"
@@ -28,6 +29,11 @@ export default {
     },
     getTaskButtonColor(taskFormShown) {
       return taskFormShown ? "red" : "green";
+    },
+  },
+  computed: {
+    homePage() {
+      return this.$route.path === "/" ? true : false;
     },
   },
   emits: ["toggleAddTask"],
