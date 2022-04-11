@@ -1,6 +1,10 @@
 <template>
   <h1>{{ title }}</h1>
-  <Button text="Add Task" color="green" />
+  <Button
+    @toggleOnClick="toggleAddTask"
+    :text="getTaskButtonText(taskFormShown)"
+    :color="getTaskButtonColor(taskFormShown)"
+  />
 </template>
 
 <script>
@@ -10,10 +14,23 @@ export default {
   name: "Header",
   props: {
     title: String,
+    taskFormShown: Boolean,
   },
   components: {
     Button,
   },
+  methods: {
+    toggleAddTask() {
+      this.$emit("toggleAddTask");
+    },
+    getTaskButtonText(taskFormShown) {
+      return taskFormShown ? "Hide Form" : "Add Task";
+    },
+    getTaskButtonColor(taskFormShown) {
+      return taskFormShown ? "red" : "green";
+    },
+  },
+  emits: ["toggleAddTask"],
 };
 </script>
 
