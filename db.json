@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Doctor's Appointment",
+      "day": "February 23rd at 12:00pm",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "Dev Learning Session",
+      "day": "March 29th at 2:00pm",
+      "reminder": false
+    },
+    {
+      "id": 4,
+      "text": "Magic Box: Demo Session",
+      "day": "March 30th at 12:00pm",
+      "reminder": true
+    },
+    {
+      "text": "Test Add Task",
+      "day": "With reminder",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "text": "Test 2 Add Task",
+      "day": "No Reminder",
+      "reminder": false,
+      "id": 6
+    }
+  ]
+}
